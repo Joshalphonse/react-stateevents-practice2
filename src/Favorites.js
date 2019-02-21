@@ -9,10 +9,8 @@ export default class Favorites extends Component {
   //   };
   // }
 
-
-
   beyComponents = (someBeys) => {
-    return someBeys.map(beyImage => <BeyCard key= {beyImage.id} beyImage ={beyImage} />);
+    return someBeys.map(beyImage => <BeyCard key= {beyImage.id} beyImage ={beyImage} thatFunction ={this.props.thatFunction} />);
   }
 
 

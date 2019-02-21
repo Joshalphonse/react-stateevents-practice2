@@ -17,7 +17,7 @@ class App extends Component {
  thatFunction = receivedBey =>{
    //Find object in this.state.beyImages and update it
    const foundBeyIndex = this.state.beyImages.findIndex(beyImage => beyImage.id === receivedBey.id)
-   const newBeys = this.state.beyImages
+   const newBeys = [...this.state.beyImages]
    newBeys[foundBeyIndex] = receivedBey
    this.setState({
      beyImages: newBeys
@@ -31,7 +31,7 @@ class App extends Component {
     return (
       <div className="container">
         <BeyContainer thatFunction ={this.thatFunction} beyImages={this.state.beyImages} />
-        <Favorites beyImages={this.state.beyImages} />
+        <Favorites thatFunction ={this.thatFunction} beyImages={this.state.beyImages} />
       </div>
     );
   }
